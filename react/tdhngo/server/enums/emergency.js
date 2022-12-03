@@ -1,0 +1,6 @@
+module.exports = Object.freeze({
+    FIRE: 'FIRE',
+    POLICE_STATION: 'POLICE_STATION',
+    AMBULANCE: 'AMBULANCE',
+    WOMEN_HELPLINE: 'WOMEN_HELPLINE'
+})

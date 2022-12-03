@@ -1,0 +1,19 @@
+stages:
+        - sonarqube_test
+        - deploy
+
+sonarqube_test:
+        stage: sonarqube_test
+        script:
+        - chmod +x sonarqube.sh
+        - ./sonarqube.sh
+        
+deploy:
+        stage: deploy
+        script:
+        - ssh ubuntu@172.16.0.216 "cd /home/administrator/pipelines/node_pipeline/social-platform-21013958-node && git pull origin UAT &&  sudo yarn && sudo pm2 restart social-1909 && exit"
+        environment:
+            name: staging
+            url: node-social.mobiloitte.org
+        only:
+            - UAT

@@ -1,0 +1,790 @@
+definitions:
+  securitySchemes:
+    tokenauth:
+      type: basic
+      description: bearer auth
+      name: Authorization
+      in: header
+    demouser:
+      type: basic
+
+  createNotification:
+    required:
+      - title
+    properties:
+      title:
+        type: string
+      description: 
+        type: string
+      notificationType: 
+        type: string
+      image:
+        type: string
+
+  register:
+    required:
+      - userName
+      - password 
+    properties:
+      userName:
+        type: string
+      countryCode:
+        type: string
+      mobileNumber:
+        type: string
+      email: 
+        type: string
+      password: 
+        type: string
+      dob:
+        type: string
+      gender:
+        type: string
+
+
+  verifyOtp:
+    required:
+      - email
+      - otp
+    properties:
+      email: 
+        type: string
+      otp: 
+        type: string
+
+  resendOtp:
+    required:
+      - email
+    properties:
+      email: 
+        type: string
+
+  emailOtp:
+    required:
+      - email
+      - userName
+    properties:
+      email: 
+        type: string
+      userName: 
+        type: string
+
+  updateProfile:
+    properties:
+      profilePic:
+        type: string
+      language:
+        type: string
+      userActivities:
+        type: object
+        properties:
+          Menstrual_Health:
+            type: object
+            properties:
+              period_tracker:
+                type: boolean
+              menstrual_hygiene:
+                type: boolean
+              FAQ:
+                type: boolean
+              exercise_suggestions:
+                type: boolean
+          Mental_Health:
+            type: object
+            properties:
+              sleep_tracking:
+                type: boolean
+              sleep_training:
+                type: boolean
+              mood_tracking:
+                type: boolean
+              mental_well_being:
+                type: boolean
+              exercise_suggestions:
+                type: boolean
+              journal:
+                type: boolean
+          Personal_Safety:
+            type: object
+            properties:
+              child_abuse:
+                type: boolean
+              online_safety:
+                type: boolean
+              sexual_abuse:
+                type: boolean
+          Support_Services:
+            type: object
+            properties:
+              support_services:
+                type: boolean
+
+  forgotPassword:
+    required:
+      - email
+    properties:
+      email:
+        type: string
+
+  resetPassword:
+    required:
+      - newPassword
+    properties:
+      newPassword:
+        type: string
+
+  addSubamin:
+    required:
+      - userName
+      - email
+      - password
+    properties:
+      userName:
+        type: string
+      email:
+        type: string
+      password: 
+        type: string
+      countryCode: 
+        type: string
+      mobileNumber: 
+        type: string
+      dob: 
+        type: string
+      gender: 
+        type: string
+      name: 
+        type: string
+      profilePic: 
+        type: string
+      permissions:
+        type: object
+        properties:
+          collectionManagement:
+            type: boolean
+            default: false
+          postManagement:
+            type: boolean
+            default: false
+          notificationManagement:
+            type: boolean
+            default: false
+          auctionManagement:
+            type: boolean
+            default: false
+          feeManagement:
+            type: boolean
+            default: false
+          userManagement:
+            type: boolean
+            default: false
+    
+  setPermissions:
+    required:
+      - _id
+    properties:
+      _id:
+        type: array
+        items:
+          type: string
+      permissions:
+        type: object
+        properties:
+          viewPassword:
+            type: boolean
+            default: false
+          viewAndBlockMessages:
+            type: boolean
+            default: false
+          addOrRemoveNewAdmin:
+            type: boolean
+            default: false
+          suspendBundles:
+            type: boolean
+            default: false          
+
+  login:
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+      password: 
+        type: string
+      deviceType:
+        type: string
+      deviceToken: 
+        type: string
+    example:
+      email: no-vishnu@mobiloitte.com
+      password: Mobiloitte@1
+      deviceType: agfsagfgfdgsfg
+      deviceToken: dsgfsgdfsgdfsgdfsgf
+
+         
+
+  addStaticContent:
+    required:
+      - type
+      - title
+      - description
+    properties:
+      type:
+        type: string
+      title: 
+        type: string
+      description: 
+        type: string
+
+  editStaticContent:
+    required:
+      - _id
+      - title
+      - description
+    properties:
+      _id:
+        type: string
+      title: 
+        type: string
+      description: 
+        type: string
+
+  addSubscription:
+    required:
+      - title
+      - description
+      - validTillDate
+      - masPrice
+      - fees
+    properties:
+      title:
+        type: string
+      description: 
+        type: string
+      validTillDate: 
+        type: string
+      masPrice: 
+        type: integer
+      fees: 
+        type: integer
+
+  editSubscription:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+      title:
+        type: string
+      description: 
+        type: string
+      validTillDate: 
+        type: string
+      masPrice: 
+        type: integer
+      fees: 
+        type: integer
+
+
+  addBundle:
+    required:
+      - title
+      - donationAmount
+      - duration
+      - image
+    properties:
+      title:
+        type: string
+      description: 
+        type: string
+      donationAmount: 
+        type: string
+      duration: 
+        type: string
+      image:
+         type: array
+         items:
+           type: string
+
+  editBundle:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+      title:
+        type: string
+      description: 
+        type: string
+      donationAmount: 
+        type: string
+      duration: 
+        type: string
+      services: 
+        type: string
+      image:
+        type: string
+
+  createCollection:
+    properties:
+      name: 
+        type: string
+      title: 
+        type: string
+      amount: 
+        type: string
+      image: 
+        type: string
+      description: 
+        type: string
+      duration:
+        type: string
+
+  editCollection:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+      name: 
+        type: string
+      title: 
+        type: string
+      amount: 
+        type: string
+      image: 
+        type: string
+      description: 
+        type: string
+      duration:
+        type: string
+
+  createBid:
+    required:
+      - auctionId
+    properties:
+      auctionId:
+        type: string
+      name: 
+        type: string
+      amountBid: 
+        type: string
+      date: 
+        type: string
+
+  editBid:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+      name: 
+        type: string
+      amountBid: 
+        type: string
+      date: 
+        type: string
+
+
+  createModerator:
+    required:
+      - userName
+      - password
+      - ip
+      - walletAddress
+    properties:
+      userName:
+        type: string
+      password: 
+        type: string
+      ip: 
+        type: string
+      walletAddress: 
+        type: string
+
+  editModerator:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+      userName:
+        type: string
+      password: 
+        type: string
+      ip: 
+        type: string
+      walletAddress: 
+        type: string
+
+
+  sendWarningMessage:
+    required:
+      - text
+      - userId
+      - chatId
+      - reportId
+    properties:
+      text:
+        type: string
+      userId:
+        type: string
+      chatId:
+        type: string
+      reportId:
+        type: string
+
+  choosePlan:
+    required:
+      - planName
+      - amount
+      - duration
+      - coinName
+    properties:
+      planName:
+        type: string
+      amount:
+        type: string
+      duration:
+        type: string
+      coinName:
+        type: string
+
+  editPlan:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+      planName:
+        type: string
+      amount:
+        type: string
+      duration:
+        type: string
+
+
+  blockUser:
+    required:
+      - _id
+      - message
+      - time
+      - reportId
+    properties:
+      _id:
+        type: string
+      message:
+        type: string
+      time:
+        type: string
+      reportId:
+        type: string
+
+
+  editFee:
+    required:
+      - _id
+      - massHeld
+      - contentCreatorFee
+    properties:
+      _id:
+        type: string
+      massHeld:
+        type: string
+      contentCreatorFee:
+        type: string
+
+
+  createCollectionNft:
+    required:
+      - tokenId
+      - tokenName
+      - collectionId
+    properties:
+      tokenId:
+        type: string
+      tokenName:
+        type: string
+      mediaUrl:
+        type: string
+      details:
+        type: string
+      time:
+        type: string
+      startingBid:
+        type: string
+      mediaFile:
+        type: string
+      coverImage:
+        type: string
+      bundleType:
+        type: string
+      collectionId:
+         type: string
+
+  createAuctionReport:
+    required:
+      - auctionId
+      - message
+    properties:
+      auctionId:
+        type: string
+      message:
+        type: string
+
+  addStory:
+    required:
+      - storyType
+      - details
+      - story
+    properties:
+      storyType:
+        type: string
+      details:
+        type: string
+      story:
+         type: array
+         items:
+           type: string
+
+  editStory:
+    required:
+      - storyId
+      - details
+      - story
+    properties:
+      storyId:
+        type: string
+      details:
+        type: string
+      story:
+         type: array
+         items:
+           type: string
+
+  socialLogin:
+    required:
+      - socialId
+      - socialType
+      - deviceType
+      - deviceToken
+      - userName
+      - email
+      - mobileNumber
+      - password
+    properties:
+      socialId:
+        type: string
+      socialType:
+        type: string
+      deviceType:
+        type: string
+      deviceToken:
+        type: string
+      userName:
+        type: string
+      email:
+        type: string
+      mobileNumber:
+        type: string  
+
+  createReport:
+    required:
+      - postId
+      - message
+    properties:
+      postId:
+        type: string
+      message:
+        type: string
+
+  createPost:
+    required:
+      - collectionId
+      - amount
+    properties:
+      collectionId:
+        type: string
+      postTitle: 
+        type: string
+      mediaUrl: 
+        type: string
+      details: 
+        type: string
+      amount: 
+        type: string
+      postType: 
+        type: string 
+      hashTagName:   
+        type: array
+        items:
+          type: string     
+      tag: 
+        type: array
+        items:
+          type: string  
+
+  updateProfileAdmin:
+    properties:
+      name:
+        type: string
+      userName:
+        type: string
+      email: 
+        type: string
+      countryCode: 
+        type: string
+      mobileNumber: 
+        type: string
+      gender: 
+        type: string
+      profilePic: 
+        type: string
+      coverPic: 
+        type: string
+      bio: 
+        type: string
+      facebook: 
+        type: string
+      twitter: 
+        type: string
+      instagram: 
+        type: string
+      linkedIn: 
+        type: string
+      dob: 
+        type: string
+      location: 
+        type: string
+
+  createPostPromotion:
+    properties:
+      postId:
+        type: string
+      postTitle: 
+        type: string
+      mediaUrl: 
+        type: string
+      details: 
+        type: string
+      dateTime:
+        type: string
+      amount:
+        type: string
+      minAge:
+        type: string
+      maxAge:
+        type: string
+      tag: 
+        type: array
+        items:
+          type: string 
+      interest: 
+        type: array
+        items:
+          type: string    
+
+  updateSubadminByUser:
+    properties:
+      subAdminId:
+        type: string
+      name:
+        type: string
+      userName:
+        type: string
+      email: 
+        type: string
+      countryCode: 
+        type: string
+      mobileNumber: 
+        type: string
+      gender: 
+        type: string
+      profilePic: 
+        type: string
+      coverPic: 
+        type: string
+      bio: 
+        type: string
+      facebook: 
+        type: string
+      twitter: 
+        type: string
+      instagram: 
+        type: string
+      linkedIn: 
+        type: string
+      dob: 
+        type: string
+      location: 
+        type: string
+      permissions:
+        type: object
+        properties:
+          collectionManagement:
+            type: boolean
+            default: false
+          postManagement:
+            type: boolean
+            default: false
+          notificationManagement:
+            type: boolean
+            default: false
+          auctionManagement:
+            type: boolean
+            default: false
+          feeManagement:
+            type: boolean
+            default: false
+          userManagement:
+            type: boolean
+            default: false
+  addReels:
+    required:
+      - reelsurl
+      - details
+      - hashTagName
+    properties:
+      details:
+        type: string
+      reelsurl:
+         type: array
+         items:
+           type: string
+      hashTagName:
+         type: array
+         items:
+           type: string
+  createReportOnReels:
+    required:
+      - reelsId
+      - message
+    properties:
+      reelsId:
+        type: string
+      message:
+        type: string
+
+  setSecurityDetails:
+    required:
+      - flag
+    properties:
+      userId:
+        type: string
+      flag:
+        type: integer
+      securityQuestion:
+        type: string
+      answer:
+        type: string
+      ageBetween:
+        type: string
+      gender:
+        type: string
+
+
+
+
+  
+  

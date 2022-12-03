@@ -1,0 +1,13 @@
+{
+    "questions": [
+        "Hi there",
+        "Is anyone there?",
+        "How are you",
+        "Hey, Hola",
+        "Good day",
+        "Hello"
+    ],
+    "answers": [
+        "Hello, thanks for asking","Good to see you again","Hi there, how can I help?"
+        ]
+}

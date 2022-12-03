@@ -1,0 +1,53 @@
+{
+    "port": 1936,
+    "hostAddress": "172.16.1.132:1936",
+    "databaseHost": "localhost",
+    "databasePort": "27017",
+    "databaseName": "tdhngo-app-abuseprotection-21054004-node-dev",
+    "jwtsecret": "nodejwt",
+    "jwtresetsecret": "nodejwt",
+    "sendGridKey":"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",
+    "nodemailer": {
+        "service": "gmail",
+        "email": "fortestingpurpose0077@gmail.com",
+        "password": "Mobiloitte@1"
+    },
+    "jwtOptions": {
+        "expiresIn": "24h"
+    },
+    "swaggerDefinition": {
+        "info": {
+            "title": "tdhngo-app-abuseprotection-21054004-node",
+            "version": "1.0",
+            "description": "tdhngo-app-abuseprotection-21054004-node API Docs"
+        },
+        "basePath": "/api/v1",
+        "securityDefinitions": {
+            "tokenauth": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "basicAuth": {
+        "userName": "no-vishnu",
+        "password": "Mobiloitte1"
+    },
+    "AWS": {
+        "accessKeyId": "AKIA4WJ5ARST5XSQGXWY",
+        "secretAccessKey": "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",
+        "region": "ap-south-1",
+        "smsSecret": "nodesms"
+    },
+    "cloudinary": {
+        "cloud_name": "dt6xwgl81",
+        "api_key": "486472713165746",
+        "api_secret": "j28iFsqQWwbGFSueEDc4I0o5j_0"
+      },
+    "twilio": {
+        "accountSid": "ACf786a64203b2524f8ee2878ee632bbe7",
+        "authToken": "746861191af93561bd9de02d47a1ad26",
+        "number": "+18555728559"
+    }
+}

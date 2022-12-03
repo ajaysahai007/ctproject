@@ -1,0 +1,14 @@
+{
+    "questions": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Nice chatting to you, bye",
+        "Till next time"
+    ],
+    "answers": [
+        "See you!",
+        "Have a nice day",
+        "Bye! Come back again soon"
+    ]
+}

@@ -1,0 +1,50 @@
+@media (max-width: 1366px) {
+  .first-table {
+    min-width: 250px;
+  }
+}
+@media (max-width: 1280px) {
+}
+@media (max-width: 1024px) {
+  .mainBoxfilter4 {
+    width: 16%;
+  }
+  .mainBoxfilter div {
+    padding: 10px;
+    width: 30.33%;
+    margin: 0;
+    border-bottom: 0.1px solid #e0e0e0;
+  }
+  .tableToken {
+    min-width: 100px !important;
+  }
+}
+@media (max-width: 991px) {
+  .loginForm {
+    width: 100%;
+    max-width: 100%;
+  }
+  .height100 {
+    height: 75%;
+  }
+  .table-data-first {
+    min-width: 180px;
+  }
+}
+@media (max-width: 767px) {
+  .loginForm h2 {
+    font-size: 25px;
+  }
+  .height100 {
+    height: 75%;
+  }
+
+  .headingText {
+    font-size: 17px !important;
+  }
+}
+@media (max-width: 600px) {
+  .height100 {
+    height: 75%;
+  }
+}
